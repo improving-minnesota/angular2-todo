@@ -31,6 +31,7 @@
     "gulp-template": "^3.0.0",
     "gulp-typescript": "~2.7.5",
     "gulp-uglify": "^1.2.0",
+    "gulp-util": "~3.0.5",
     "gulp-watch": "^4.2.4",
     "jasmine-core": "~2.3.4",
     "karma": "~0.12.37",
@@ -44,7 +45,8 @@
     "systemjs-builder": "^0.13.3",
     "tiny-lr": "^0.1.6",
     "tsd": "^0.6.4",
-    "typescript": "~1.5.3"
+    "typescript": "~1.5.3",
+    "wrench": "~1.5.8"
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.37",
