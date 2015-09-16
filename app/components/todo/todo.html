@@ -1,0 +1,41 @@
+<div class="jumbotron">
+	<div class="container">
+		<div class="col-md-6 col-md-offset-3">
+  			<h1 class="text-center">Todos!</h1>
+  		</div>
+  	</div>
+</div>
+<div class="row">
+	<div class="col-lg-6 col-md-offset-3">
+	    <div class="input-group">
+	      <input  #newtodo type="text" class="form-control" placeholder="Add Todo...">
+	      <span class="input-group-btn">
+	        <button (click)="add(newtodo)" class="btn btn-default" type="button">Add</button>
+	      </span>
+	    </div>
+  	</div>
+ </div>
+ <br/>
+ <div class="row">
+ 	<div class="col-lg-6 col-md-offset-3">
+ 		<div class="panel panel-default">
+  			<div class="panel-heading">My Todos</div>
+	 		<ul class="list-group">
+			  <li class="list-group-item" *ng-for="#todoitem of list.get()">
+			  	<div class="row">
+				  <div class="col-lg-1">
+				  	<input type="checkbox">
+				  </div>
+				  <div class="col-lg-9">
+				  	{{todoitem}}
+				  </div>
+				  <div class="col-lg-2">
+				  	<button (click)="remove(todoitem)" type="button" class="btn btn-danger">Remove</button>
+				  </div>
+				 </div>
+			  </li>
+			</ul>
+		</div>
+	</div>
+ </div>
+
