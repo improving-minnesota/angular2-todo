@@ -23,7 +23,7 @@ import {Todos} from './services/Todos';
 ])
 
 @View({
-  templateUrl: './app.html?v=<%= VERSION %>',
+  templateUrl: './app.html',
   styleUrls: ['/node_modules/bootstrap/dist/css/bootstrap.min.css'],
   directives: [ROUTER_DIRECTIVES]
 })

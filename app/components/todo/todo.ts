@@ -7,7 +7,7 @@ import {Todos} from '../../services/Todos';
 })
 
 @View({
-  templateUrl: './components/todo/todo.html?v=<%= VERSION %>',
+  templateUrl: './components/todo/todo.html',
   directives: [CORE_DIRECTIVES]
 })
 

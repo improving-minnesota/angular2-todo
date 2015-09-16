@@ -46,12 +46,24 @@ var APP_SRC = 'app';
 var APP_DEST = 'dist';
 var ANGULAR_BUNDLES = './node_modules/angular2/bundles/';
 
+var wrench = require('wrench');
+
+/**
+ *  This will load all js or coffee files in the gulp directory
+ *  in order to load all gulp tasks
+ */
+wrench.readdirSyncRecursive('./build').filter(function(file) {
+  return (/\.(js|coffee)$/i).test(file);
+}).map(function(file) {
+  require('./build/' + file);
+});
+
 var PATH = {
   dest: {
     all: APP_DEST,
     dev: {
-      all: APP_DEST + '/dev',
-      lib: APP_DEST + '/dev/lib'
+      all: APP_DEST + '/',
+      lib: APP_DEST + '/lib'
     },
     prod: {
       all: APP_DEST + '/prod',
@@ -160,9 +172,9 @@ gulp.task('build.dev', function (done) {
 // Post install
 
 gulp.task('install.typings', ['clean.tsd_typings'], shell.task([
-  'tsd reinstall --overwrite',
-  'tsd link',
-  'tsd rebundle'
+  './node_modules/.bin/tsd reinstall --overwrite',
+  './node_modules/.bin/tsd link',
+  './node_modules/.bin/tsd rebundle'
 ]));
 
 gulp.task('postinstall', function (done) {
