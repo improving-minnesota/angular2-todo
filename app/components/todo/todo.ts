@@ -17,10 +17,16 @@ export class Todo {
   
   add(newtodo) {
     this.list.add(newtodo.value);
-    newtodo.value = '';
+    newtodo.value = null;
   }
 
   remove(name: string) {
   	this.list.remove(name);
+  }
+
+  doneTyping($event) {
+    if($event.which === 13) {
+      this.add($event.target);
+    }
   }
 }
