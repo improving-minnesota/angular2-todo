@@ -142,8 +142,8 @@ gulp.task('build.js.dev', function () {
     .pipe(gulp.dest(PATH.dest.dev.all));
 });
 
-gulp.task('build.assets.dev', ['build.js.dev'], function () {
-  return gulp.src([join(PATH.src.all, '**/*.html'), join(PATH.src.all, '**/*.css'), join(PATH.src.all, '**/*.png')])
+gulp.task('build.assets.dev', ['build.js.dev', 'build.css.dev'], function () {
+  return gulp.src([join(PATH.src.all, '**/*.html'), join(PATH.src.all, '**/*.png')])
     .pipe(gulp.dest(PATH.dest.dev.all));
 });
 
