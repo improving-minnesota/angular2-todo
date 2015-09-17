@@ -11,8 +11,8 @@ export class Todos {
 
   remove(value: string) {
   	var index = this.todos.indexOf(value, 0);
-	if (index != undefined) {
-	   this.todos.splice(index, 1);
-	}
+  	if (index != undefined) {
+  	   this.todos.splice(index, 1);
+  	}
   }
 }
