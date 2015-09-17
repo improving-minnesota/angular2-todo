@@ -36,13 +36,13 @@ export function main() {
             expect(todosListLen()).toEqual(2);
             expect(DOM.querySelectorAll(aboutDOMEl, 'li').length).toEqual(todosListLen());
 
-            todoInstance.add({value: 'Minko'});
+            todoInstance.add({value: 'Test'});
             rootTC.detectChanges();
 
             expect(todosListLen()).toEqual(3);
             expect(DOM.querySelectorAll(aboutDOMEl, 'li').length).toEqual(todosListLen());
 
-            expect(DOM.querySelectorAll(aboutDOMEl, 'li')[2].textContent).toContain('Minko');
+            expect(DOM.querySelectorAll(aboutDOMEl, 'li')[2].textContent).toContain('Test');
 
             async.done();
           });
