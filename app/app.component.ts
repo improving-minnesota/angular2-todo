@@ -2,32 +2,31 @@ import {Component, View, bootstrap} from 'angular2/angular2';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
 // import {HTTP_BINDINGS} from 'http/http';
 
-import {Home} from './components/home/home';
-import {Todo} from './components/todo/todo';
-import {Todos} from './services/Todos';
+import {HomeComponent} from './components/home/home.component';
+import {TodoComponent} from './components/todo/todo.component';
+import {TodoService} from './services/todo.service';
 
 @Component({
   selector: 'app',
-  viewBindings: [Todos]
+  viewBindings: [TodoService]
 })
 
 @RouteConfig([
   { 
   	path: '/', 
-  	component: Home, as: 'home' 
+  	component: HomeComponent, as: 'home' 
   },
   { 
   	path: '/todo', 
-  	component: Todo, as: 'todo' 
+  	component: TodoComponent, as: 'todo' 
   }
 ])
 
 @View({
   templateUrl: './app.html',
-  styleUrls: ['/node_modules/bootstrap/dist/css/bootstrap.min.css'],
   directives: [ROUTER_DIRECTIVES]
 })
 
-class App {}
+class AppComponent {}
 
-bootstrap(App, [ROUTER_BINDINGS]);
+bootstrap(AppComponent, [ROUTER_BINDINGS]);

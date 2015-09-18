@@ -14,8 +14,8 @@ import {
 } from 'angular2/test';
 import {Component, View} from 'angular2/angular2';
 import {DOM} from 'angular2/src/core/dom/dom_adapter';
-import {Todo} from './todo';
-import {Todos} from '../../services/Todos';
+import {TodoComponent} from './todo.component';
+import {TodoService} from '../../services/todo.service';
 
 export function main() {
   describe('Todo component', () => {
@@ -32,7 +32,7 @@ export function main() {
               return todoInstance.list.todos.length;
             }
 
-            expect(todoInstance.list).toEqual(jasmine.any(Todos));
+            expect(todoInstance.list).toEqual(jasmine.any(TodoService));
             expect(todosListLen()).toEqual(2);
             expect(DOM.querySelectorAll(aboutDOMEl, 'li').length).toEqual(todosListLen());
 
@@ -50,6 +50,6 @@ export function main() {
   });
 };
 
-@Component({selector: 'test-cmp', bindings: [Todos]})
-@View({directives: [Todo]})
+@Component({selector: 'test-cmp', bindings: [TodoService]})
+@View({directives: [TodoComponent]})
 class TestComponent {}

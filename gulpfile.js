@@ -130,8 +130,8 @@ gulp.task('build.lib.dev', function () {
 });
 
 gulp.task('build.js.dev', function () {
-  var result = gulp.src([join(PATH.src.all, '**/*ts'),
-                         '!' + join(PATH.src.all, '**/*_spec.ts')])
+  var result = gulp.src([join(PATH.src.all, '**/*.ts'),
+                         '!' + join(PATH.src.all, '**/*.spec.ts')])
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(tsc(tsProject));

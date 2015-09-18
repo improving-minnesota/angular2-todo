@@ -1,6 +1,6 @@
 import {Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
 
-import {Todos} from '../../services/Todos';
+import {TodoService} from '../../services/todo.service';
 
 @Component({
   selector: 'todo'
@@ -11,20 +11,20 @@ import {Todos} from '../../services/Todos';
   directives: [CORE_DIRECTIVES]
 })
 
-export class Todo {
-  constructor(public list: Todos) {
+export class TodoComponent {
+  constructor(public todoService: TodoService) {
   }
   
-  add(newtodo) {
-    this.list.add(newtodo.value);
+  add(newtodo) : void {
+    this.todoService.add(newtodo.value);
     newtodo.value = null;
   }
 
-  remove(name: string) {
-  	this.list.remove(name);
+  remove(name: string) : void {
+  	this.todoService.remove(name);
   }
 
-  doneTyping($event) {
+  doneTyping($event) : void {
     if($event.which === 13) {
       this.add($event.target);
     }

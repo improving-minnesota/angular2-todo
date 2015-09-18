@@ -1,11 +1,11 @@
-import {Todos} from './Todos';
+import {TodoService} from './todo.service';
 
 export function main() {
-  describe('Todos Service', () => {
+  describe('Todo Service', () => {
     var todos;
 
     beforeEach(() => {
-      todos = new Todos
+      todos = new TodoService
     });
 
     it('should return the list of todos', () => {
