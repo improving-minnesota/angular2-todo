@@ -15,18 +15,13 @@ export class TodoComponent {
   constructor(public todoService: TodoService) {
   }
   
-  add(newtodo) : void {
+  add(newtodo) : boolean {
     this.todoService.add(newtodo.value);
     newtodo.value = null;
+    return false
   }
 
   remove(name: string) : void {
   	this.todoService.remove(name);
-  }
-
-  doneTyping($event) : void {
-    if($event.which === 13) {
-      this.add($event.target);
-    }
   }
 }
