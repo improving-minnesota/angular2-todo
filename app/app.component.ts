@@ -5,6 +5,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_BINDINGS} from 'angular2/router';
 import {HomeComponent} from './components/home/home.component';
 import {TodoComponent} from './components/todo/todo.component';
 import {TodoService} from './services/todo.service';
+import {HttpComponent} from './components/http/http.component';
 
 @Component({
   selector: 'app',
@@ -19,6 +20,10 @@ import {TodoService} from './services/todo.service';
   { 
   	path: '/todo', 
   	component: TodoComponent, as: 'todo' 
+  },
+  {
+    path: '/http',
+    component: HttpComponent, as: 'http'
   }
 ])
 
