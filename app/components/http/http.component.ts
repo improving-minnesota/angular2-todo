@@ -1,5 +1,6 @@
 import {Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
 import {HTTP_BINDINGS, Http} from 'angular2/http';
+import {Person} from './person.interface';
 
 @Component({
   selector: 'http',
@@ -12,7 +13,7 @@ import {HTTP_BINDINGS, Http} from 'angular2/http';
 })
 
 export class HttpComponent {
-	people : Object[];
+	people : Person[];
 	http : Http;
 
 	constructor(http:Http) {
