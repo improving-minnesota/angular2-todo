@@ -1,13 +1,10 @@
 import {Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
-import {HTTP_BINDINGS, Http} from 'angular2/http';
+import {HTTP_PROVIDERS, Http} from 'angular2/http';
 import {Person} from './person.interface';
 
 @Component({
   selector: 'http',
-  bindings: [HTTP_BINDINGS]
-})
-
-@View({
+  providers: [HTTP_PROVIDERS],
   templateUrl: './components/http/http.html',
   directives: [CORE_DIRECTIVES]
 })

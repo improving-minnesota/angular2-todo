@@ -3,10 +3,7 @@ import {Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
 import {TodoService} from '../../services/todo.service';
 
 @Component({
-  selector: 'todo'
-})
-
-@View({
+  selector: 'todo',
   templateUrl: './components/todo/todo.html',
   directives: [CORE_DIRECTIVES]
 })

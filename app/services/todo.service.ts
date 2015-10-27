@@ -1,5 +1,5 @@
 export class TodoService {
-  todos:string[] = ['My first thing to do", "My second thing to do'];
+  todos:string[] = ['My first thing to do', 'My second thing to do'];
 
   get() : string[] {
     return this.todos;

@@ -1,10 +1,16 @@
 import {join} from 'path';
-import {injectableDevAssetsRef, transformPath, templateLocals} from '../utils';
-import {PATH} from '../workflow.config';
+import {PATH} from '../config';
+import {
+  injectableAssetsRef,
+  transformPath,
+  templateLocals
+} from '../utils';
 
-export = function (gulp, plugins) {
+export = function buildIndexDev(gulp, plugins) {
   return function () {
-    let target = gulp.src(injectableDevAssetsRef(), { read: false });
+    let injectables = injectableAssetsRef();
+    let target = gulp.src(injectables, { read: false });
+
     return gulp.src(join(PATH.src.all, 'index.html'))
       .pipe(plugins.inject(target, {
         transform: transformPath(plugins, 'dev')
