@@ -62,8 +62,7 @@ export const PATH = {
       resolve('bootstrap/dist/fonts/glyphicons-halflings-regular.woff2')
     ],
     assets: [
-      `${APP_SRC}/assets/ObjectPartnersLogo.png`,
-      `${APP_SRC}/assets/people.json`
+      `${APP_SRC}/assets/ObjectPartnersLogo.png`
     ]
   }
 };
