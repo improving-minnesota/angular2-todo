@@ -1,7 +1,6 @@
 import {
   AsyncTestCompleter,
   TestComponentBuilder,
-  By,
   beforeEach,
   ddescribe,
   describe,
@@ -11,7 +10,7 @@ import {
   inject,
   it,
   xit,
-} from 'angular2/test';
+} from 'angular2/test_lib';
 import {Component, View} from 'angular2/angular2';
 import {DOM} from 'angular2/src/core/dom/dom_adapter';
 import {TodoComponent} from './todo.component';
@@ -26,8 +25,8 @@ export function main() {
           .then((rootTC) => {
             rootTC.detectChanges();
 
-            var todoInstance = rootTC.componentViewChildren[0].componentInstance;
-            var aboutDOMEl = rootTC.componentViewChildren[0].nativeElement;
+            let todoInstance = rootTC.debugElement.componentViewChildren[0].componentInstance;
+            let aboutDOMEl = rootTC.debugElement.componentViewChildren[0].nativeElement;
             var todosListLen = function () {
               return todoInstance.list.todos.length;
             }

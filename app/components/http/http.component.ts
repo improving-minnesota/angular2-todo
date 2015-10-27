@@ -21,7 +21,7 @@ export class HttpComponent {
 	}
 
 	performRequest() : void {
-		this.http.get('/assets/people.json').toRx().subscribe(res => {
+		this.http.get('/assets/people.json').subscribe(res => {
 	       this.people = res.json();
 	    });
 	}

@@ -15,18 +15,20 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'node_modules/angular2/node_modules/zone.js/dist/zone-microtask.js',
-      'node_modules/angular2/node_modules/zone.js/dist/long-stack-trace-zone.js',
-      'node_modules/angular2/node_modules/zone.js/dist/jasmine-patch.js',
-      'node_modules/angular2/node_modules/traceur/bin/traceur-runtime.js',
-      'node_modules/es6-module-loader/dist/es6-module-loader-sans-promises.src.js',
+      'node_modules/zone.js/dist/zone-microtask.js',
+      'node_modules/zone.js/dist/long-stack-trace-zone.js',
+      'node_modules/zone.js/dist/jasmine-patch.js',
+      'node_modules/es6-module-loader/dist/es6-module-loader.js',
+      'node_modules/traceur/bin/traceur-runtime.js', // Required by PhantomJS2, otherwise it shouts ReferenceError: Can't find variable: require
       'node_modules/systemjs/dist/system.src.js',
       'node_modules/reflect-metadata/Reflect.js',
 
-      { pattern: 'test/**/*.js', included: false, watched: true },
       { pattern: 'node_modules/angular2/**/*.js', included: false, watched: false },
-      { pattern: 'node_modules/systemjs/dist/*.js', included: false, watched: false },
-      'test-main.js',
+      { pattern: 'node_modules/@reactivex/rxjs/**', included: false, watched: false },
+      { pattern: 'test/**/*.js', included: false, watched: true },
+      { pattern: 'node_modules/systemjs/dist/system-polyfills.js', included: false, watched: false }, // PhantomJS2 (and possibly others) might require it
+
+      'test-main.js'
     ],
 
 
@@ -66,11 +68,14 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: [
+      'PhantomJS2',
+      'Chrome'
+    ],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
-  })
-}
+  });
+};
