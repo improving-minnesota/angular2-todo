@@ -28,10 +28,9 @@ export function main() {
             let todoInstance = rootTC.debugElement.componentViewChildren[0].componentInstance;
             let aboutDOMEl = rootTC.debugElement.componentViewChildren[0].nativeElement;
             var todosListLen = function () {
-              return todoInstance.list.todos.length;
+              return todoInstance.todoService.get().length;
             }
 
-            expect(todoInstance.list).toEqual(jasmine.any(TodoService));
             expect(todosListLen()).toEqual(2);
             expect(DOM.querySelectorAll(aboutDOMEl, 'li').length).toEqual(todosListLen());
 
