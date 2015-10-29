@@ -11,7 +11,7 @@ import {HttpComponent} from '../http/http.component';
 
 @Component({
   selector: 'app',
-  viewBindings: [TodoService],
+  viewProviders: [TodoService],
   templateUrl: './components/app/app.html',
   encapsulation: ViewEncapsulation.None,
   directives: [ROUTER_DIRECTIVES]
