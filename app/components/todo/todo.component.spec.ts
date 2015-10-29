@@ -24,7 +24,7 @@ export function main() {
             let aboutDOMEl = rootTC.debugElement.componentViewChildren[0].nativeElement;
             var todosListLen = function () {
               return todoInstance.todoService.get().length;
-            }
+            };
 
             expect(todosListLen()).toEqual(2);
             expect(DOM.querySelectorAll(aboutDOMEl, 'li').length).toEqual(todosListLen());
