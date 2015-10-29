@@ -1,15 +1,10 @@
 import {
   AsyncTestCompleter,
   TestComponentBuilder,
-  beforeEach,
-  ddescribe,
   describe,
-  el,
   expect,
-  iit,
   inject,
-  it,
-  xit,
+  it
 } from 'angular2/test_lib';
 import {Component, View} from 'angular2/angular2';
 import {DOM} from 'angular2/src/core/dom/dom_adapter';
