@@ -1,15 +1,10 @@
 import {
   AsyncTestCompleter,
   TestComponentBuilder,
-  beforeEach,
-  ddescribe,
   describe,
-  el,
   expect,
-  iit,
   inject,
-  it,
-  xit,
+  it
 } from 'angular2/test_lib';
 import {Component, View} from 'angular2/angular2';
 import {DOM} from 'angular2/src/core/dom/dom_adapter';
@@ -29,7 +24,7 @@ export function main() {
             let aboutDOMEl = rootTC.debugElement.componentViewChildren[0].nativeElement;
             var todosListLen = function () {
               return todoInstance.list.todos.length;
-            }
+            };
 
             expect(todoInstance.list).toEqual(jasmine.any(TodoService));
             expect(todosListLen()).toEqual(2);
