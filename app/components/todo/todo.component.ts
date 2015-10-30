@@ -1,6 +1,8 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, CORE_DIRECTIVES} from 'angular2/core';
 
 import {TodoService} from '../../services/todo.service';
+//import {MdButton, MdAnchor} from 'angular2_material/src/components/button/button';
+
 
 @Component({
   selector: 'todo',

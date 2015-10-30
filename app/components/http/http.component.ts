@@ -1,4 +1,4 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, CORE_DIRECTIVES} from 'angular2/core';
 import {HTTP_PROVIDERS, Http} from 'angular2/http';
 import {Person} from './person.interface';
 
