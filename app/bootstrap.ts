@@ -1,4 +1,4 @@
-import {bind, bootstrap} from 'angular2/angular2';
+import {bind, bootstrap} from 'angular2/core';
 import {ROUTER_PROVIDERS, ROUTER_PRIMARY_COMPONENT} from 'angular2/router';
 import {AppCmp} from './components/app/app';
 
